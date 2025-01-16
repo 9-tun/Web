@@ -11,10 +11,16 @@
 		}
 
 		/* Do it!  타원형으로 흰색, 노란색, 빨간색으로 바뀌는 그러데이션 .grad1 스타일 만들기 */
-
+		.grad1 {
+			background: red;																				/* CSS를 지원하지 않는 웹브라우저 용 */	
+			background: radial-gradient(white, yellow, red);  /* 모양을 지정하지 않으면 타원 */
+		}
 
 		/* Do it! 원형으로 흰색, 노란색, 빨간색으로 바뀌는 그러데이션 .grad2 스타일 만들기  */
-
+		.grad2 {
+			background: red;																				/* CSS를 지원하지 않는 웹브라우저 용 */	
+			background: radial-gradient(circle, white, yellow, red);  /* 모양을 지정하지 않으면 타원 */
+		}
   </style>
 </head>
 <body>
