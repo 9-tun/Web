@@ -12,7 +12,14 @@
     }
     body {      
       background:url('images/bg5.jpg') no-repeat left top fixed;
-      background-size:cover;      
+      background-size:cover;    
+      display: flex;
+      justify-content: center;  /* 주축(Main Axis)에서 항목을 가로 방향으로 정렬 (컨테이너 내 전체 항목 적용) */
+      align-items: center;      /* 교차축은 items */
+      min-height: 100vh;
+      
+      /* 아래 코드가 제대로 동작하려면 여러 개의 flex 줄(flex-wrap으로 묶인 줄들)이 있어야 함 */
+      /* align-content: center; */      
     }
     button {
       background-color:#ccc;

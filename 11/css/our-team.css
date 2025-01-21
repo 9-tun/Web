@@ -24,6 +24,10 @@ h1 {
   border-radius: 0.6em;
   box-shadow: 0 0 2.4em rgba(25, 0, 58, 0.1);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card .img-container {
   width:8em;
@@ -46,6 +50,13 @@ h1 {
   margin: 0.5em 0 2em 0;
   letter-spacing: 2px;
 }
+.social {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
 .card:hover {
   background: linear-gradient(#6045ea, #8567f7);
   color: #fff;
@@ -59,4 +70,24 @@ a {
 }
 a:hover {
   color: #fff;
+}
+
+@media screen and (min-width: 1024px) {
+  #container {
+    padding: 1em;           /* padding을 container 부모 요소의 글꼴 크기 (font-size, 기본값 16px)의 1배 만큼 설정 */
+  }
+  .row {
+    display: flex;        /* .row 요소를 플렉스 컨테이너(flex container)로 설정, 기본값: 가로(row) 방향 */
+    flex-wrap: wrap;      /* 공간 부족 시, 줄바꿈 */
+    padding: 2em 2em;     /* 상하 여백, 좌우 여백 */
+    text-align: center;   /* 내부 text 정렬 */
+  }
+  .card {
+    padding: 5em 1em;     /* 상하 여백, 좌우 여백 */
+  }
+  .column {
+    flex: 0 0 33.33%;     /* flex-grow = 0(남은 공간이 있어도 크기 키우지 않음), flex-shrink=0(공간이 모자랄 때 줄이지 않음), flex-basis=33.33%(기본 크기를 컨테이너의 33.33%로 설정) */
+    max-width: 33.33%;    /* 요소의 최대 너비를 컨테이너의 **33.33%**로 제한합니다. */
+    padding: 0 1em;       /* 상하 여백, 좌우 여백 */
+  }
 }

@@ -10,6 +10,38 @@
       width: 100%; /* 이미지가 .pic 에 가득차도록 */
       height: auto; /* 이미지의 비율을 유지 */
     } 
+    @media screen and (max-width: 768px) {
+      .container{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        padding: 1em 1em;        
+      }
+    }
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      .container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        /* justify-items: center;
+        align-items: center; */
+        justify-content: center;
+        align-content: center;
+        padding: 1em 1em;        
+      }
+    }
+    @media screen and (min-width: 1025px) {
+      .container{
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        padding: 1em 1em;        
+      }
+      .pic{
+        flex-shrink: 1;
+      }
+    }
+
   </style>
 </head>
 <body>
