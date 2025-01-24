@@ -9,6 +9,9 @@
       .container {
         width:600px;
         border: 1px solid #ccc;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(100px,auto);     /* 행 높이 최소값: 100px, 최대값: 자동 */
       }
       .items{
         padding:10px;
