@@ -21,15 +21,16 @@
       padding-bottom:5px;
     }
     .navi ul li {
-      display:inline-block;
+      display:inline-block;   /* 가로로 정렬 */
       width:150px;
       padding:10px;   
     }
+    /* a:link = 미방문 링크
+    a:visited = 방문한 링크 */
     .navi a:link, .navi a:visited {
       font-size:14px;
       padding: 10px; 
       text-decoration: none;  /* 밑줄 없음 */
-
     }
     .navi a:hover,  .navi a:focus {
       background-color:#222;  /* 배경색 */
@@ -98,7 +99,18 @@
     }
 
     /* Do it! 라디오 버튼을 클릭했을 때 label 스타일 지정하기 */
+    /* #signup input:checked + label {
+      color: red;
+      font-weight: bold;
+    } */
 
+    /* input 중에서 radio 타입이 아닌 요소에만 적용 */
+    #signup input:not([type=radio]){
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 200px;
+    }
   </style>
 </head>
 <body>

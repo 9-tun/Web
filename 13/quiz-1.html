@@ -27,6 +27,16 @@
       margin-bottom: 8px;
     }
 
+    /* 첫 번째 방법: container 클래스에서 홀수 번째 tr에만 적용 */
+    .container tr:nth-child(odd) td{
+      background-color: yellow;
+    }
+
+    /* 두 번째 방법: 홀수 번째 tr에 적용 */
+    tr:nth-child(odd) td{
+      background-color: yellow;
+    } 
+
   </style>
 </head>
 <body>

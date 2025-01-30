@@ -21,7 +21,11 @@
     }
 
     /* Do it! clamp() 함수로 글자 크기 범위 지정하기 */
-    
+    .heading h1{
+      font-size: clamp(1rem, 2vw, 2rem);
+      /* rem = Root em = html의 기본 폰트 = 16px */
+      /* em = 부모 요소 기준 폰트 */
+    }
   </style>
 </head>
 <body>

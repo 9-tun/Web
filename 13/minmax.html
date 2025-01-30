@@ -13,12 +13,23 @@
     
     /* Do it! min() 함수로 너비 지정하기 */
     .heading {
+      width: min(100%, 700px);
+      margin: auto;
+
       background-color: #222;
       color: #fff;
       padding: 10px;
       text-align: center;
       font-weight: bold;
       text-shadow: 2px 2px 2px #000;    
+    }
+
+    .heading h1{
+      font-size: max(3vw, 2em);
+      /* 
+      - vm: 뷰포트(화면) 너비의 비율을 기준으로 크기 결정, 예) 화면 너비 = 1000px, 3vw = 3% of 1000px = 30px
+      - 2em: 부모 폰트 크기 × 2 
+      */
     }
 
     /* Do it! max() 함수로 글자 크기 지정하기 */
