@@ -16,14 +16,24 @@
 				float: left;
 				margin: 40px;
 			}
-			.origin > div {				
+			.origin > div {			/* origin 클래스의 직접 자식 div */	
 				width:100px;
 				height:100px;
 				background-color:orange;
+				transition: 1s;			/* 움직이는 데 걸리는 시간, 부드럽게 움직이게 할 때 */
 			}
 
       /* Do it! 마우스 오버하면 사각형 이동하기 */
-
+			#movex:hover{
+				transform:translateX(50px);
+			}
+			#movey:hover{
+				transform:translateY(20px);
+			}
+			#movexy:hover{
+				transform:translate(10px,20px);
+			}
+			
 		</style>
 	</head>
 	<body>		

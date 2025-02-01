@@ -9,11 +9,17 @@
       height: 100px;
       background-color: #fa0;
       /* Do it! 2초 동안 애니메이션 실행하기 */
-
+      animation-name: slideRight;
+      animation-duration: 2s;   /* 이걸 반드시 표시해야 함, 아니면 0이 돼서 애니매이션 효과 볼 수 없음 */
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
 
     /* Do it! @keyframes로 애니메이션 정의하기 */
-
+    @keyframes slideRight {
+      from { transform: translateX(0); }
+      to { transform: translateX(500px);}
+    }
   </style>
 </head>
 

@@ -19,8 +19,34 @@
       color: #fff;
       outline: 2px solid #fff;  
       padding:20px 60px;
+      position: relative; /* 부모 요소에 상대적으로 배치 */
+      overflow: hidden;   /* 밖으로 튀어나가는 부분은 숨기기 */
+
+      transition: color 1s; /* 글자색이 1초 동안 변하기 */
+    }
+    .button::before {
+      content: "";          /* 가상 요소는 항상 content가 필요함, 빈 문자열이므로 실제 텍스트는 없지만 박스 형태로 존재함 */
+      position: absolute;   /* 부모 요소가 position: relative; 이므로, 부모의 좌측 상단을 기준으로 배치됨 */
+      
+      /* 박스 좌측 상단 좌표가 0,0 이고 크기가 100% 이니까 전체를 가리겠다는 뜻 */
+      top: 0; 
+      left: -50px;  /* 부모 요소 왼쪽에서 -50px 만큼 떨어져서 배치 */
+      width: 0%;
+      height: 100%;
+      
+      background-color: #fff;
+      z-index: -5; /* z축 레이어를 뒤로 보내기 */
+
+      transform: skewX(35deg);
+      transition: width 1s; /* width 값이 변경될 때, transition이 발동됨 */
+    }
+    .button:hover {
+      color: #ff5e62;
     }
 
+    .button:hover::before { /* .button에 마우스를 올리면, 가상요소 before의 width가 150%로 증가함 */
+      width: 150%;
+    }
   </style>
 </head>
 
