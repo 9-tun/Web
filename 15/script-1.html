@@ -14,6 +14,11 @@
 	<p id="text">위 텍스트를 클릭해 보세요</p>
   
 	<!-- Do it! 내부 스크립트 코드 작성하기 -->
-
+	<script>
+		let heading = document.querySelector('#heading');		/* Doc에서 id가 heading인 요소를 선택해서 heading이라는 변수에 저장 */
+		heading.onclick = function(){		/* heading이 클릭됐을 때 실행될 함수 정의 */
+			heading.style.color = "red";	/* heading 글자 색상을 read로 변경 */
+		}
+	</script>
 </body>
 </html>
