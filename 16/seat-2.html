@@ -4,6 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자리 배치도</title>
+  <style>
+    body{
+      display:flex;
+      flex-direction: column;     /* 세로 방향 배치 */
+      justify-content: center;    /* 수평 축 기준으로 가운데 정렬 */
+      align-items: center;        /* 수직 축 기준으로 가운데 정렬 */
+      height: 100vh;              /* 뷰포트 높이의 100% */
+    }
+
+    table, td{
+     border: 1px solid #ccc;
+     border-collapse: collapse;   /* table과 td의 테두리를 병합해 단일선으로 표시 */ 
+    }
+
+    td{
+      padding: 10px;
+      font-size: 0.9em;           /* 글꼴의 90% */
+    }
+  </style>
 </head>
 <body>
   <h1>자리 배치도</h1>
@@ -19,7 +38,24 @@
     else {  // 나누어 떨어지지 않으면}
       rowNum = parseInt(memNum / colNum) + 1;
     }
-    document.write(`모두 ${rowNum}개의 줄이 필요합니다.`);
+    //document.write(`모두 ${rowNum}개의 줄이 필요합니다.`);
+
+    // 잠깐 이해하고 넘어가기!
+    // <table>, <tr>, <td>는 브라우저의 기본 구조입니다. 
+    // <tr>은 표의 행을 나타냄, 각 행을 세로로 배치
+    // <td>는 표의 셀을 나타냄, 각 셀을 수평으로 배치
+      
+    document.write(`<table>`);
+    for (let i = 0; i < rowNum; i++){
+      document.write(`<tr>`);
+      for (let j = 0; j < colNum; j++){
+        seatNo = i * colNum + j;
+        if (seatNo > memNum) break;
+        document.write(`<td> 좌석 ${seatNo} </td>`);
+      }
+      document.write(`</tr>`);
+    }
+    document.write(`</table>`);
   </script>
 </body>
 </html>
