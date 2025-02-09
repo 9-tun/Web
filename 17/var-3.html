@@ -12,9 +12,14 @@
     var x = 10;  // 전역 변수 선언
 
 		function displayNumber() { 								
+      // 참고: ctrl + shift + j 로 conosole 보기 나중에 까먹을까봐 ^^;;
+
       console.log(`x is ${x}`);
       console.log(`y is ${y}`);      
       var y = 20;  // 지역 변수 선언 및 값 할당
+
+      // y를 뒤에 선언했지만, Javascript 해석기는 변수를 먼저 쭉 읽고 실행하기 때문에 앞으로 호이스팅(끌어올린) 효과가 남
+      // var y; 가 선언됐다고 생각하고 아직 20은 배정 전이기 때문에 "y is undefined"로 뜬다.
 		}
 
     displayNumber();

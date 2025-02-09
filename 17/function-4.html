@@ -24,6 +24,17 @@
 	<script>		
     // Do it! 즉시 실행 함수 사용하기
 
+    // 괄호로 감싸면 함수가 표현식으로 인식됨 = 즉시 실행이 가능!
+    (
+      function(){
+      let userName = prompt("이름을 입력하세요.");
+      document.write(`<p> 안녕하세요? <span class="accent">${userName}</span>님!</p>`);
+      }()
+    );
+    
+    // 즉시 실행 함수 사용 목적
+    // 주로 변수 스코프를 제한해서 코드 사이에 충돌이 생기는 것을 방지하기 위해 사용
+
   </script>	
 </body>
 </html>

@@ -8,7 +8,16 @@
 <body>
 	<script>		
     // Do it! var 예약어로 변수 선언하기
+    var sum = 0;
+    function addNumber(){
+      var result;
+      sum = 10 + 20;
+      result = 10 * 20;
+    }
 
+    addNumber();
+    console.log(sum);     // 전역 변수는 잘 뜸
+    console.log(result);  // 지역 변수는 함수 밖에서 안 뜸
   </script>
 </body>
 </html>

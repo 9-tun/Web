@@ -18,7 +18,14 @@
 <body>
 	<script>		
     // Do it! 매개변수 기본값 사용하기
+    function multiple(a, b = 5, c = 10){
+      return a * b + c;
+    }
 
+    document.write(`multiple 실행 결과: ${multiple(10)}<br>`);
+    document.write(`multiple 실행 결과: ${multiple(10, 10)}<br>`);
+    document.write(`multiple 실행 결과: ${multiple(10, 10, 20)}<br>`);
+    
 	</script>	
 </body>
 </html>

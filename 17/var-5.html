@@ -8,8 +8,22 @@
 <body>
 	<script>		
     // Do it! let 변수를 사용해 1부터 10까지 더하는 코드를 작성하기
+    let sumResult = 0;
 
+    function sum() {
+      let n = 10;
+      let result = 0;
 
+      for(let i = 1; i <= n; i++){
+        result += i;
+      }    
+
+      sumResult = result;
+    }
+
+    sum();
+    console.log(result);      // result를 sum 함수 밖에서 사용하면 오류 
+    console.log(sumResult);   // 위에서 걸리면 다음 행도 실행 안 함, 하지만 위 행을 주석 처리하고 실행하면 값 들어감
   </script>
 </body>
 </html>

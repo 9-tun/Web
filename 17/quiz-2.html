@@ -6,6 +6,26 @@
 	<title>연습문제 2</title>
 </head>
 <body>
-	
+	<script>
+		let num1 = prompt("첫 번재 숫자를 입력하세요.");
+		let num2 = prompt("두 번째 숫자를 입력하세요.");
+
+		function compare(num1, num2){
+			if(num1 > num2){
+				return num1;
+			}
+			else if (num1 < num2){
+				return num2;
+			}
+			else{
+				return "는 없고 동일한 결과";
+			}
+		}
+		
+		compare(num1, num2);
+
+		alert(`입력 받은 두 수 중에서 더 큰 수는 ${compare(num1,num2)}입니다.`);
+
+	</script>
 </body>
 </html>

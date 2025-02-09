@@ -14,6 +14,13 @@
 <body>
 	<script>		
 	// Do it! 매개변수가 있는 즉시 실행 함수 사용하기
+		
+		(function(a,b){
+			sum = a + b;		
+		}(100, 200));			// 마지막에 매개인자 넣어줄 수 있음
+
+		// var, let, const 없이 선언한 sum은 전역변수 
+		document.write(`함수 실행 결과: ${sum}`);
 
   </script>	
 </body>
