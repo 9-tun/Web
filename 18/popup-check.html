@@ -10,7 +10,16 @@
 
 	<script>
 		// Do it! Window 객체 연습하기 - 팝업 차단 체크하기
+		let blocked = false;
+		function openPopup(){
+			let newWind = window.open("notice.html", "pop", "width=500, height=400");
+			if (newWind == null){
+				alert("팝업이 차단되어 있습니다. 팝업 차단을 해제해 주세요")
+			}
+		}
 
+		openPopup();	
 	</script>
+	
 </body>
 </html> 

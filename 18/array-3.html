@@ -22,15 +22,24 @@
   <div class="container">
     <script>
       // Do it! 인수 개수에 따라 splice 메서드 사용하기
-      let study = ['html', 'css', 'web', 'jquery'];
+      let study = ['html', 'css', 'web', 'jquery', 'react', 'nodejs'];
 
       // 인수가 1개일 경우
-
+      let js = study.splice(2);                         // 매개인자부터 배열 끝까지 삭제
+      document.write(`반환된 배열: ${js} <br>`);        // web, jquery, react, nodejs
+      document.write(`변경된 배열: ${study} <br>`);     // html, css
+      document.write(`<hr>`);
 
       // 인수가 2개일 경우
-
+      let jquery = js.splice(1,1);                      // 첫 번째 매개인자부터 두 번째 매개인자 개수만큼 삭제
+      document.write(`반환된 배열: ${jquery} <br>`);    // jquery
+      document.write(`변경된 배열: ${js} <br>`);        // web, react, nodejs
+      document.write(`<hr>`);
 
       // 인수가 3개 이상일 경우
+      let modernJs = js.splice(1, 0, 'typescript');     // 첫 번째 매개인자부터, 두 번째 매개인자 개수만큼 삭제, 세 번째 매개인자를 추가
+      document.write(`반환된 배열: ${modernJs} <br>`);  // 삭제한 것이 아무 것도 없어서 공란
+      document.write(`변경된 배열: ${js} <br>`);        // web, typescript, react, nodejs
       
     </script>
   </div>

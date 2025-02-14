@@ -18,16 +18,25 @@
 </head>
 <body>
   <div class="container">
-    <button id="bttn">현재 시간 보기</button>
+    <button id="bttn" onclick="displayTime()">현재 시간 보기</button>
   </div>
 
   <script>
-    function displayTime(){        
-      
+    function displayTime(){              
       // window.open() 메서드를 사용해서 current.html 파일을 팝업 창으로 표시하세요.
       // 팝업 창은 화면 중앙에 표시합니다.
 
+      function openCenter(doc, win, width, height){
+        let left = (screen.availWidth - width) / 2;
+        let top = (screen.availHeight - height) / 2;
+        let opt = `left=${left}, top=${top}, width=${width}, height=${height}`;
+        
+        window.open(doc, win, opt);
+      }
+
+      openCenter('quiz-1.html', 'pop', 400, 200);
     }
+
   </script>
 </body>
 </html>

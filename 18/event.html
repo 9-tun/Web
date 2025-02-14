@@ -31,6 +31,17 @@
       <h1>당첨자 발표</h1>
       <script>
         // Do it! Math 객체 연습하기 - 당첨자 1명 뽑기
+        let seed = prompt("전체 응모자 수: ","");
+        let picked = Math.floor((Math.random()*seed) + 1); 
+
+        // Math.random()은 1보다 작은 소수점을 반환, 최소값 = 0, 최대값 = 0.9999
+        // 거기에 임의의 자연수를 곱하면, 최소값 = 0, 최대값 = 자연수보다 살짝 작은 어떤 수
+        // 거기에 1을 더하면, 최소값 = 1, 최대값 = 자연수.99999
+        // Math.floor로 소수점을 버리면, 최소값 = 1, 최대값 = 자연수
+        // 이상으로써 당첨자 번호를 얻었다.
+
+        document.write(`<p>전체 응모자 수: ${seed}명 <p>`);
+        document.write(`<p>당첨자: ${picked}번 </p>`);
 
       </script>
     </div>

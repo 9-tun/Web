@@ -11,6 +11,14 @@
 		// Do it! 인수 개수에 따라 slice 메서드 사용하기
 		let colors = ["red", "green", "blue", "white", "black"];
 		
+		document.write(colors.slice(2));			// 인덱스 2부터 끝까지 꺼냄 = blue, white, black
+		document.write("<hr>");
+		document.write(colors.slice(2,4));		// 인덱스 2부터 3 직전까지 = blue, white
+
+		// splice와 slice의 다른점
+		// splice = 기존 배열이 변경됨
+		// slice = 기존 배열이 바뀌지 않음
+
 	</script>
 </body>
 </html>
