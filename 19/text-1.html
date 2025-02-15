@@ -31,14 +31,17 @@
   <div id="detail">
     <ul>
       <li>원산지 : 에디오피아</li>
-      <li style="display: none">지 역 : 이르가체프 코체레</li>
+      <li style="display: none">지 역 : 이르가체프 코체레</li>  <!-- display: none으로 내용을 감춤 -->
       <li style="display: none">농 장 : 게뎁</li>
     </ul>
   </div>
 
   <script>
     // Do it! DOM을 사용해 텍스트에 접근하기
-
+    let detail = document.querySelector('#detail > ul');  // id = "detail" 내에서 ul을 가져온 후, 객체 detail에 할당
+    console.log(detail.innerText);    // 보이는 내용만 불러옴
+    console.log(detail.innerHTML);    // 태그와 주석까지 전부 갖고옴 
+    console.log(detail.textContent);  // 요소 내용을 그대로 가져옴 (숨긴 내용 볼 수 있음)
   </script>
 </body>
 </html>

@@ -32,7 +32,16 @@
   
 	<script>
     // Do it! 이벤트 리스너 안에서 함수 선언하기
+    let cat = document.querySelector("#cat");
 
+    // 두 번째 매개인자 자리에 화살표 함수를 바로 써버리기
+    cat.addEventListener("mouseover", ()=>{
+      cat.src = "images/kitty-2.png"
+    },false);
+
+    cat.addEventListener("mouseout", ()=>{
+      cat.src = "images/kitty-1.png"
+    }); // 마지막 세 번째 인자인 캡쳐 여부는 기본값이 false로 생략 가능
 	</script>
 </body>
 </html>

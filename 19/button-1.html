@@ -22,6 +22,18 @@
       cursor: pointer;
     }
     /* Do it! 필요한 클래스 스타일 정의하기 */
+    /* 버튼을 활성화, 비활성화 하는 스타일 2개를 만들어 보자 */
+    .disabled{
+      color: #ccc;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+    .enabled{
+      color: #fff;
+      background-color: #007bff;
+      border: 1px solid #007bff;
+    }
+
   </style>
 </head>
 <body>
@@ -31,11 +43,27 @@
     </label>
   </div>
   <div>
-    <button id="proceed" disabled>다음으로 진행</button>
+    <button id="proceed" disabled>다음으로 진행</button>  <!-- disabled = true까지 안 적고 disabled라고만 적어도 비활성화 됨 -->
   </div>  
 
   <script>
     // Do it! 체크 박스에 체크하면 버튼 활성화하기
+    document.addEventListener('DOMContentLoaded', function(){
+      const checkbox = document.querySelector("#agree");
+      const proceedButton = document.querySelector("#proceed");
+
+      checkbox.addEventListener("change", function(){
+        if(this.checked){
+          proceedButton.classList.remove('disabled');
+          proceedButton.classList.add('enabled');
+          proceedButton.disabled = false;
+        } else{
+          proceedButton.classList.remove('enabled');
+          proceedButton.classList.add('disabled');
+          proceedButton.disabled = true;
+        }
+      });
+    });
   </script>
 </body>
 </html>

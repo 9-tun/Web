@@ -39,6 +39,17 @@
 
       subject.value="";
     }
+
+    const itemList = document.querySelector("#itemList");   // li가 포함되어 있는 부모 요소인 ul을 가져와서    
+    // 이벤트 리스너를 등록해준다.
+    itemList.addEventListener("click", (event)=>{           // 클릭 이벤트 발생 시
+      if(event.target.tagName == "LI"){                     // 이벤트가 발생한 대상의 tag가 LI 인지 확인하고 맞으면
+        if(confirm("삭제하시겠습니까?")){                   // 확인 후에
+          event.target.remove();                            // 이벤트 발생 대상을 삭제한다.
+        }
+      }
+    })
+
 	</script>
 </body>
 </html>

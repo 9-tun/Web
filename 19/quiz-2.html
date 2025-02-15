@@ -4,8 +4,62 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>연습문제 2</title>
+	<style>
+		#table{
+			border-collapse: collapse;
+		}
+		#table td{
+			border: 1px solid white;
+			padding: 10px;
+		}
+		input{
+			width: 50px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div>
+		<input type="text" id="row" autofocus>
+		<label>행</label>
+		<input type="text" id="col" autofocus>
+		<label>열</label>
+		<button>작성</button>
+		<table id="table"></table>
+	</div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function(){
+			let button = document.querySelector("button");	
+			let txtRow = document.querySelector("#row");
+			let txtCol = document.querySelector("#col");
+
+			button.addEventListener('click', function(){			
+
+				const rows = Number(txtRow.value);
+				const cols = Number(txtCol.value);
+
+				if(isNaN(rows) || isNaN(cols) || rows <= 0 || cols <= 0){
+					alert("입력값 오류입니다.");
+					return;
+				}
+
+				if (txtRow.value !=="" && txtCol.value !== ""){					
+					const newTable = document.querySelector("#table");
+					newTable.innerHTML = "";
+
+					for (let i = 0; i < rows; i++){
+						const newRow = document.createElement("tr");
+						for (let j = 0; j < cols; j++){
+							const newCol = document.createElement("td");
+							newCol.textContent = `(${i},${j})`;
+							newRow.appendChild(newCol);
+						}						
+						newTable.appendChild(newRow);
+					}					
+				} else{
+					alert("값을 입력 후 생성해 주세요.");
+				}
+			})
+		})
+	</script>
 </body>
 </html>

@@ -11,12 +11,35 @@
     <h1>Web Programming</h1>
     <p>공부할 주제를 기록해 보세요</p>
     <form action="">
-      <label for="subject" class="hidden">주제</label>
-      <input type="text" id="subject" autofocus>
+      <label for="subject" class="hidden">주제</label>    <!-- for - id는 같은 값을 가진 것끼리 서로 연결 -->
+      <input type="text" id="subject" autofocus>          <!-- 입력란 -->
       <button>추가</button>
     </form>
     <hr>  
-    <ul id="itemList"></ul>  
+    <ul id="itemList"></ul>  <!-- 표시 영역 -->
   </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      const button = document.querySelector("button");
+      button.addEventListener("click", function(){
+        event.preventDefault(); // 기본 동작 막음
+        newRegistor();
+      });
+    })
+
+    function newRegistor(){
+      const newItem = document.createElement("li");
+      const subject = document.querySelector("#subject");
+      const newText = document.createTextNode(subject.value);
+
+      newItem.appendChild(newText);
+
+      const itemList = document.querySelector("#itemList");
+      /* itemList.appendChild(newItem); */
+      itemList.insertBefore(newItem, itemList.childNodes[0]); // 추가하는 항목이 항상 맨 위에 추가됨
+
+      subject.value = "";
+    }
+  </script>
 </body>
 </html>
